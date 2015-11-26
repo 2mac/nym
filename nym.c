@@ -130,7 +130,7 @@ nym_convert (const char *src)
       if (nym_errno)
 	goto fail;
 
-      for (++i; i < len && isacro (src[i]); ++i)
+      for (++i; i < len && (isacro (src[i]) || src[i] == '\''); ++i)
 	;
     }
 
