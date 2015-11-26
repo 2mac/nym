@@ -1,0 +1,42 @@
+nym
+===
+
+A Unix-style program for creating acronyms and initialisms.
+
+nym reads text input from stdin and writes the initials of the input to
+stdout.
+
+    $ echo "the world's worst superhero squad name" | nym
+    TWWSSN
+
+To Build
+--------
+
+nym uses the GNU build process:
+
+    $ ./autogen.sh
+    $ ./configure
+	$ make
+
+To Install
+----------
+
+After building (see above):
+
+    # make install
+
+Hacking
+-------
+
+nym uses the GNU coding style for C with a strict 79-column limit in the source
+code. Indentations are two spaces, and tab characters are eight spaces. It is
+polite to use a tab character any time eight spaces would be used in an
+indentation, but it is not required.
+
+License
+-------
+
+nym is free (libre) software, released under the terms of version 3 of the GNU
+Affero General Public License. You are free to copy, modify, and redistribute
+this software and use it for whatever purpose. See [COPYING](COPYING) for
+details.
