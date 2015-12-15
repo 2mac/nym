@@ -31,7 +31,7 @@
 #endif
 
 #define USAGE_INFO "USAGE: " PROG " [options]\n\n"	\
-  PROG "reads from stdin and writes an initialism of it to stdout.\n\n\
+  PROG " reads from stdin and writes an initialism of it to stdout.\n\n\
 OPTIONS:\n\
 \t-h, --help\tPrints this help message and exits\n\
 \t-v, --version\tPrints version info and exits\n"
