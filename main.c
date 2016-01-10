@@ -1,6 +1,6 @@
 /*
  *  nym - Unix-style program for creating acronyms and initialisms
- *  Copyright (C) 2015 David McMackins II
+ *  Copyright (C) 2015-2016 David McMackins II
  *
  *  This program is free software: you can redistribute it and/or modify
  *  it under the terms of the GNU Affero General Public License as published by
@@ -37,7 +37,7 @@ OPTIONS:\n\
 \t-v, --version\tPrints version info and exits\n"
 
 #define VERSION_INFO VERSION_STRING "\n\
-Copyright (C) 2015 David McMackins II\n\
+Copyright (C) 2015-2016 David McMackins II\n\
 License AGPLv3: GNU AGPL version 3 only <http://gnu.org/licenses/agpl.html>.\n\
 This is libre software: you are free to change and redistribute it.\n\
 There is NO WARRANTY, to the extent permitted by law.\n\n\
@@ -88,7 +88,10 @@ main (int argc, char *argv[])
     {
       nym_errno = nym_pushbuf (buf, c);
       if (nym_errno)
-	goto end;
+	{
+	  fprintf (stderr, "Error loading input: %s\n", nym_estring ());
+	  goto end;
+	}
     }
 
   char *nym = nym_convert (buf->data);
